@@ -1,4 +1,4 @@
-package numbers;
+package edu.school21.numbers;
 
 public class NumberWorker {
     public boolean isPrime(int number) {

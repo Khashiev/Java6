@@ -1,7 +1,5 @@
 package edu.school21.numbers;
 
-import numbers.IllegalNumberException;
-import numbers.NumberWorker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
