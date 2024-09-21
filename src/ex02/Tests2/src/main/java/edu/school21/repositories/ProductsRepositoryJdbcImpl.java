@@ -24,7 +24,7 @@ public class ProductsRepositoryJdbcImpl implements ProductsRepository {
         String sql = "SELECT * FROM tests.product";
 
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement ps = connection.prepareStatement(sql);) {
+             PreparedStatement ps = connection.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -63,7 +63,7 @@ public class ProductsRepositoryJdbcImpl implements ProductsRepository {
         String sql = "UPDATE tests.product SET name = ?, price = ? WHERE id = ?";
 
         try (Connection connection = dataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement(sql);) {
+        PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, product.getName());
             ps.setDouble(2, product.getPrice());
             ps.setLong(3, product.getId());
@@ -78,7 +78,7 @@ public class ProductsRepositoryJdbcImpl implements ProductsRepository {
         String sql = "INSERT INTO tests.product VALUES (?, ?, ?)";
 
         try (Connection connection = dataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement(sql);) {
+        PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setLong(1, product.getId());
             ps.setString(2, product.getName());
             ps.setDouble(3, product.getPrice());
@@ -93,7 +93,7 @@ public class ProductsRepositoryJdbcImpl implements ProductsRepository {
         String sql = "DELETE FROM tests.product WHERE id = ?";
 
         try (Connection connection = dataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement(sql);) {
+        PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setLong(1, id);
             ps.executeUpdate();
         } catch (SQLException e) {
